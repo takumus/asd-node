@@ -7,14 +7,14 @@
 # 単体生成
 `artroom.sd.config.js`で各パラメータを設定し`yarn generate`  
 または、  
-`yarn generate --prompt_text="kawaii"`のように、`artroom.sd.config.js`のパラメータは引数で変更できます。
+`yarn generate --text_prompts="kawaii"`のように、`artroom.sd.config.js`のパラメータは引数で変更できます。
 # 連続生成
 `batch.sample.js`を編集します。  
 ワードを配列に増やせば、連続生成できます。  
 `node ./batch.sample.js`
 # 生成結果
 `./outputs`に出ます。  
-index.htmlを開けばすべての画像を一覧で見られます。  
+`index.html`を開けばすべての画像を一覧で見られます。  
 <img src="./sample.png" width="100%">
 # runner.py
 <https://github.com/artmamedov/artroom-stable-diffusion/blob/main/artroom-helpers/runner.py>  
