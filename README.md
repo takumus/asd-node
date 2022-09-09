@@ -14,7 +14,8 @@
 `node ./batch.sample.js`
 # 生成結果
 `./outputs`に出ます。  
-index.htmlを開けばすべての画像を一覧で見られます。
+index.htmlを開けばすべての画像を一覧で見られます。  
+<img src="./sample.png" width="100%">
 # runner.py
 <https://github.com/artmamedov/artroom-stable-diffusion/blob/main/artroom-helpers/runner.py>  
 上記のスクリプトを、並列に対応したり、コンフィグを変え易いように編集したものです。
