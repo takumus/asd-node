@@ -1,14 +1,10 @@
 const fs = require("fs");
 const Path = require("path");
-module.exports = (destDir) => {
+module.exports = (images, destDir) => {
   const prompt = Path.basename(destDir);
-  const imgtags = fs
-    .readdirSync(destDir)
-    .filter((name) => {
-      return name.startsWith("seed") && name.endsWith(".png");
-    })
+  const imgtags = images
     .map((name) => {
-      return `<img src="./${name}" style="width: 256px;">`;
+      return `<img src="${name}" style="width: 256px;">`;
     })
     .join("");
   const html = `<html><head><title>${prompt}</title></head><body><p>${prompt}</p>${imgtags}</body></html>`;

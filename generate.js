@@ -25,7 +25,20 @@ module.exports = (sdConfig) =>
         // console.log(line);
         if (line.startsWith("__out__")) {
           const dest = Path.resolve(line.replace("__out__", ""));
-          generateHTML(dest);
+          const images = fs
+            .readdirSync(dest)
+            .filter((name) => {
+              return name.startsWith("seed") && name.endsWith(".png");
+            })
+            .map((name) => {
+              const newName = Path.basename(dest) + "-" + name;
+              fs.renameSync(
+                Path.resolve(dest, name),
+                Path.resolve(dest, newName)
+              );
+              return Path.resolve(dest, newName);
+            });
+          generateHTML(images, dest);
         }
       });
     };
